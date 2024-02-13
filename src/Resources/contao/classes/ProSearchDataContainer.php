@@ -46,7 +46,7 @@ class ProSearchDataContainer extends DataContainer
         $return = '';
 
         $operations = &$GLOBALS['TL_DCA'][$strTable]['list']['operations'];
-        $mode = $GLOBALS['TL_DCA'][$strTable]['list']['sorting']['mode'];
+        $mode = $GLOBALS['TL_DCA'][$strTable]['list']['sorting']['mode'] ?? '';
 
         $id = specialchars(rawurldecode($arrRow['docId']));
         $id = $id ? '&amp;id=' . $id : '';
