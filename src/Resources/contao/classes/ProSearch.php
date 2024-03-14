@@ -466,7 +466,7 @@ class ProSearch extends ProSearchDataContainer
         /**
          * set custom icon callbacks
          */
-        if ($this->modules[$doTable] && is_array($this->modules[$doTable]['setCustomIcon'])) {
+        if ($this->modules[$doTable] && isset($this->modules[$doTable]['setCustomIcon'])) {
             foreach ($this->modules[$doTable]['setCustomIcon'] as $callable) {
                 $this->import($callable[0]);
                 $this->modules[$doTable]['icon'] = $this->{$callable[0]}->{$callable[1]}($table, $db, $arr, $dca);
